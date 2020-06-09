@@ -51,7 +51,7 @@ class ConvertController extends Controller
         $j2000Offset = $this->epoch->getJ2000TimeOffsetTT($date, $leapSeconds);
 
         return response()->json(
-            $this->converter->convert($date, $j2000Offset),
+            $this->converter->convert($j2000Offset),
             200,
         );
     }

@@ -31,7 +31,7 @@ class Converter implements ConverterInterface
         return gmdate('H:i:s', floor($solDate * 3600));
     }
 
-    public function convert(string $input, float $j2000Offset): array
+    public function convert(float $j2000Offset): array
     {
         return [
             'mars_sol_date' => $this->getMarsSolDate($j2000Offset),
