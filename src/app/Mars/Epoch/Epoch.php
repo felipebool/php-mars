@@ -6,6 +6,7 @@ namespace App\Mars\Epoch;
 
 class Epoch implements EpochInterface
 {
+
     public function getJ2000TimeOffsetTT(string $time, float $leapSeconds): float
     {
         $millis = strtotime($time) * 1000;

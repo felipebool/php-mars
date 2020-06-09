@@ -16,14 +16,14 @@ class Converter implements ConverterInterface
         return $solDate;
     }
 
-    public function getMarsSolDate(float $j2000Offset): string
+    private function getMarsSolDate(float $j2000Offset): string
     {
         $solDate = $this->getMarsSolDateAsFloat($j2000Offset);
 
         return number_format($solDate, 2, ',', '.');
     }
 
-    public function getMartianCoordinatedTime(float $j2000Offset): string
+    private function getMartianCoordinatedTime(float $j2000Offset): string
     {
         $solDate = $this->getMarsSolDateAsFloat($j2000Offset);
         $solDate = fmod($solDate * 24, 24);
