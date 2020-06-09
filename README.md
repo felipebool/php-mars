@@ -16,8 +16,16 @@ After running `docker-compose up`, you can start sending requests. I tried to
 make the interface as simple as possible, thus, POST verb was used instead of GET
 to send the date string to be converted.
 
-The POST data must contain only one field called `date` filled with a string
-representing the date you want to convert.
+### POST data format
+The POST data must contain only one field called `date`, filled with a string
+representing the date you want to convert. Any other fields, if present, will
+be ignored. The json must be formatted as follows:
+
+```
+{
+    "date": "Tuesday, 9 June 2020, 13:01:16 CEST"
+}
+```
 
 ## Return messages
 There are two possible errors (discounting 50x errors, : D)
