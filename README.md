@@ -16,7 +16,8 @@ order to try this project.
 ### Sending requests
 After running `docker-compose up`, you can start sending requests. I tried to
 make the interface as simple as possible, thus, POST verb was used instead of GET
-to send the date string to be converted.
+to send the date string to be converted. The requests must be sent to
+`http://localhost/api/v1/mars/convert`.
 
 ### POST data format
 The POST data must contain only one field called `date`, filled with a string
