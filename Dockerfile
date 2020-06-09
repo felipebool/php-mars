@@ -43,6 +43,7 @@ RUN apt-get install -y nginx
 ADD resources/default /etc/nginx/sites-enabled/
 ADD resources/nginx.conf /etc/nginx/
 
+RUN chown -R www-data:www-data storage/
 #------------- Composer & laravel configuration ----------------------------------------------------
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
