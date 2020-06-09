@@ -3,13 +3,15 @@ This project is based on Nasa's Mars24 Sunclock. It provides a simple interface
 for converting UTC to Mars Sol Date and Martian Coordinated Time (MTC).
 
 ## Dependencies
-You need to have Docker and Docker compose installed on your local machine in
+You need to have Docker and Docker compose in
+stalled on your local machine in
 order to try this project.
 
 ## How to use it
 * Clone this repo
-* Go to the repository directory
+* `cd` to the cloned repository
 * Run `docker-compose up`
+* Run `docker exec -it app composer install`
 
 ### Sending requests
 After running `docker-compose up`, you can start sending requests. I tried to
@@ -25,6 +27,15 @@ be ignored. The json must be formatted as follows:
 {
     "date": "Tuesday, 9 June 2020, 13:01:16 CEST"
 }
+```
+
+### Sample request using `curl`
+```
+curl --location --request POST 'http://localhost:8080/api/v1/mars/convert' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"date": "Tuesday, 9 June 2020, 13:01:16 CEST"
+}'
 ```
 
 ## Return messages
