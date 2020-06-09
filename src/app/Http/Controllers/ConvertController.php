@@ -36,6 +36,7 @@ class ConvertController extends Controller
 
     public function convert(Request $request)
     {
+        var_dump('here');
         if (!$request->has('date')) {
             return response()->json(['message' => 'Missing date field'], 400);
         }
