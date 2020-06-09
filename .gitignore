@@ -2,8 +2,8 @@ src/vendor
 /.idea
 Homestead.json
 Homestead.yaml
-.env
-.env.example
+src/.env
+src/.env.example
 .phpunit.result.cache
 artisan
 .editorconfig
