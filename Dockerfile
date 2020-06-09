@@ -53,7 +53,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN apt-get install -y supervisor
 RUN mkdir -p /var/log/supervisor
 ADD resources/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN composer update
 #------------- Container Config ---------------------------------------------------------------
 # Expose port 80
 EXPOSE 8080
